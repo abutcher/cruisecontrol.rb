@@ -51,7 +51,7 @@ module CruiseControl
         ARGV << Rails.root.join('tmp', 'pids', 'server.pid').to_s
       end
 
-      ARGV << 'puma'
+      ARGV << 'thin'
 
       require File.join(File.dirname(__FILE__), '..', 'platform')
       Platform.running_as_daemon = ARGV.include?('-d') || ARGV.include?('--daemon')
